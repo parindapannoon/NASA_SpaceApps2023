@@ -1,0 +1,238 @@
+<html>
+	<head>
+		<title>CodeClipse</title>
+		<link rel="stylesheet" href="./styleintro.css">
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100%; }
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="button1">
+		<button onclick="startAnimation()">Next</button></div>
+		<div class="button2"><a href="./indexintro.html"><button>Back</button></a></div>
+		<h5 id="txt"></h5>
+			<div class="container">
+				<p><h2><b>How does eclipse occur?</b></h2></p>
+			  <p><h5>First chapter will explain how a celestial body obscure the light to another celestial body</h5></p> 
+			</div></div>
+			<div class="card">
+				<center><img src="../Images/introtype.png" style="width:36%"></center>
+				 <div id="txt2" > </div>
+				</div>
+			
+			  
+		  </div>
+		<script src="https://cdn.bootcss.com/three.js/r83/three.js"></script>
+		<script src="../js/control.js"></script>
+		<script src="../js/OBJLoader.js"></script>
+		<script>
+			var texts = ["<h6>Image accquired from: https://www.britannica.com/story/what-causes-lunar-and-solar-eclipses","<h6><br>An eclipse happens when one astronomical body blocks light from or to another.",
+			"<h6>There are 2 types of eclipse", "<h6>In a solar eclipse, happens just the right moment when the Moon passes between the Sun and Earth, casting a shadow on Earth that either fully or partially blocks the Sun’s light. So during the day, the Moon moves over the Sun and it gets dark in the day.",
+			"<h6>In a Lunar eclipse, Earth gets in the way of the Sun’s light hitting the Moon so the Earth’s shadow falls upon the surface of the Moon which means that during the night, a full moon fades away as Earth’s shadow covers it up."];
+        var currentIndex = 0;
+			function startAnimation() {if (currentIndex < texts.length) {
+                var output = document.getElementById("txt2");
+                output.innerHTML += "<p>" + texts[currentIndex] + "</p>";
+                currentIndex++;
+            } else {
+                window.location.replace("./indextype.html");
+            }}   
+	
+			var renderer // 渲染器
+			function initRender () {
+				renderer = new THREE.WebGLRenderer({ antialias: true })
+				renderer.setSize(window.innerWidth, window.innerHeight) 
+				document.body.appendChild(renderer.domElement) 
+			}
+
+			var scene // 场景
+			function initScene () {
+				scene = new THREE.Scene()
+				var texture = new THREE.ImageUtils.loadTexture('../Images/beautiful-shot-blue-purple-sky-filled-with-starts.jpg')
+				texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+				// texture.repeat.set( 3, 3 );
+				// texture.anisotropy = 16;
+				scene.background = texture
+			}
+
+			var universe 
+			function initUniverse () {
+				var geometry = new THREE.SphereGeometry( 30, 100, 100) 
+				var texture = new THREE.ImageUtils.loadTexture('../Images/beautiful-shot-blue-purple-sky-filled-with-starts.jpg')
+      	var material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, transparent: true, opacity: 0.5})
+				universe = new THREE.Mesh( geometry, material ) 
+				scene.add(universe)
+			}
+
+      var camera 
+			function initCamera () {
+				camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.5, 1000)
+				camera.position.set(3.085544113236575, 0.502282743542976, 0.8333816911447958)
+			}
+			var controls // 控制器(鼠标交互)
+			function initControls () {
+				controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', renderer.render( scene, camera ) ); // use only if there is no animation loop
+				controls.minDistance = -10;
+				controls.maxDistance = 100;
+				controls.enablePan = false;
+			}
+
+			var light1, light2 
+			function initLight () {
+				
+				var light1 = new THREE.PointLight(0xffffff, 3, 1000)
+				var light2 = new THREE.PointLight(0xffffff, 3, 1000)
+				light1.position.set(0, 0, 8)
+				light2.position.set(0, 0, -8)
+				scene.add(light1)
+				scene.add(light2)
+			}
+
+			
+		
+			function initSunAxios () { 
+				earthAxios = new THREE.Object3D()
+				earthAxios.position.z = -6.5 // earthaxios
+				scene.add(earthAxios)
+			}
+
+			var moonAxios, satelliteAxios// 相对地球中心轴
+			function initEarthAxios () {
+				moonAxios = new THREE.Object3D()
+				moonAxios.position.x = 7 
+				earthAxios.add(moonAxios) 
+				satelliteAxios = new THREE.Object3D() 
+				satelliteAxios.position.x = 7
+				earthAxios.add(satelliteAxios)
+			}
+
+			var sun; // 太阳
+			function initSun() {
+				var geometry = new THREE.SphereGeometry( 2, 100, 100) // 几何体 (模型)TorusGeometry
+				var texture = new THREE.ImageUtils.loadTexture('../Images/sun1.jpg')
+      	var material = new THREE.MeshLambertMaterial({map: texture, emissive: 0xff4500}) // 网格材料 (材质)FF4500
+				sun = new THREE.Mesh( geometry, material ) // 网格
+				sun.position.z = -9
+				scene.add(sun)
+			}
+
+		
+
+			var earth // 地球
+			function initEarth () {
+				var geometry = new THREE.SphereGeometry( 0.4, 100, 100) // 几何体 (模型)TorusGeometry
+				var texture = new THREE.ImageUtils.loadTexture('../Images/earth.jpg')
+      	var material = new THREE.MeshLambertMaterial({map: texture, transparent: true, opacity: 1}) // 网格材料 (材质)
+				earth = new THREE.Mesh( geometry, material ) // 网格
+				earth.position.x = 7 // 相对于太阳中心轴的位置(距离太阳半径)
+				earthAxios.add(earth) // 将地球添加太阳中心轴
+				// 运行轨迹
+				var geometry = new THREE.TorusBufferGeometry( 7, 0.01, 16, 100 );
+				var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+				var torus = new THREE.Mesh( geometry, material );
+				torus.rotation.x = Math.PI / 2
+				earthAxios.add( torus );
+			}
+
+			var moon // 月球
+			function initMoon () {
+				var geometry = new THREE.SphereGeometry( 0.1, 100, 100) // 几何体 (模型)TorusGeometry
+				var texture = new THREE.ImageUtils.loadTexture('../Images/moon2.jpg')
+      	var material = new THREE.MeshLambertMaterial({map: texture, transparent: true, opacity: 1}) // 网格材料 (材质)
+				moon = new THREE.Mesh( geometry, material ) // 网格
+				moon.position.x = 0.9 // 相对于地球中心轴的位置
+				moonAxios.add(moon)
+			}
+
+			var satellite // 绕地卫星
+			function initSatellite () {
+				var manager = new THREE.LoadingManager();
+				manager.onProgress = function ( item, loaded, total ) {
+					console.log( item, loaded, total )
+				}
+				var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' )
+					}
+				}
+				var onError = function ( xhr ) {
+				}
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( '../models/satellite/10477_Satellite_v1_L3.obj', function ( object ) {
+					object.traverse( function ( child ) {
+						if ( child instanceof THREE.Mesh ) {
+							child.material.map = new THREE.ImageUtils.loadTexture('../models/satellite/10477_Satellite_v1_Diffuse.jpg')
+						}
+					} )
+					object.position.x = 0.45
+					object.scale.x = object.scale.y = object.scale.z = 0.00008
+					// object.rotation.x = Math.PI / 2
+					object.rotation.z = Math.PI / 2
+					satellite = object
+					satelliteAxios.add( satellite )
+				}, onProgress, onError )
+			}
+
+			var text 
+			function initText () {
+				var loader = new THREE.FontLoader(); // 字体加载器
+				loader.load( '../font/cn-fan.json', function ( font ) {
+					var geometry = new THREE.TextGeometry('宇宙', {
+						font, size: 0.6, 
+						height: 0.05,
+						curveSegments: 0.1,
+						bevelEnabled: false,
+						bevelThickness: 0.05,
+						bevelSize: 0.1,
+						bevelSegments: 1
+					})
+					var material = new THREE.MeshLambertMaterial({ color: 0x000000, emissive: 0x999999})
+					text = new THREE.Mesh( geometry, material ) // 网格
+					text.position.x = -15
+					text.position.y = 6
+					scene.add(text)
+				} )
+			}
+			
+
+			function animate() { // 动画
+				requestAnimationFrame(animate)
+				sun.rotation.y += 0.001 // 控制太阳自转
+				earth.rotation.y += 0.001 // 控制地球自转
+				moon.rotation.y += 0.01 // 控制月球自转
+				satellite.rotation.y += 0.0001 // 控制卫星自转
+				moonAxios.rotation.z += 0.002 
+				satelliteAxios.rotation.z += 0.004 
+				earthAxios.rotation.y += 0.002 
+				console.log(camera.position )
+				
+				renderer.render(scene, camera) // 渲染场景和相机
+			}
+
+			function draw () {
+				initRender() // 渲染器
+				initScene() // 场景
+				initUniverse() // 宇宙
+				initCamera() // 相机
+				initLight() // 灯光
+				initControls() // 控制器
+				initSunAxios() // 以太阳为中心的轴
+				initEarthAxios() // 相对地球坐标轴
+				initSun() // 太阳
+				initEarth() // 地球
+				initMoon() // 月球
+				initSatellite() // 绕地卫星
+				// initText() // 文字
+				animate()
+			}
+
+			draw()
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClipse</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./solar.css" />
+    <link rel="stylesheet" type="text/css" href="./another.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <canvas id="bg"></canvas>
+
+    <div class="description">
+      <div class="tab_container">
+        <div class="tabs">
+          <div class="tab-4">
+            <label for="tab4-1">
+              <div class="row tab4_align">
+                <div
+                  class="moon_solar_partial"
+                  style="width: 20px; height: 20px"
+                >
+                  <div
+                    class="solar_partial"
+                    style="width: 20px; height: 20px"
+                  ></div>
+                </div>
+                <div class="topic_name" style="margin-left: -10px">Partial</div>
+              </div>
+            </label>
+            <input
+              id="tab4-1"
+              name="tabs-four"
+              type="radio"
+              checked="checked"
+            />
+            <div>
+              <div class="container">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_partial"></s>
+                      <s id="s2_partial"></s>
+                      <s id="s3_partial"></s>
+                      <!-- <s id="s4_partial"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                In a partial solar eclipse, only a portion of
+                                the Sun is covered by the Moon, and viewers on
+                                Earth see a partial reduction in sunlight. When
+                                the Moon and Sun are not perfectly aligned and
+                                just a part of the Moon passes in front of the
+                                Sun, only the Moon’s penumbra (areas in yellow
+                                line) will hit Earth. The umbra(areas in red
+                                line) misses the location that we observed. This
+                                produces a partial eclipse only.
+                              </p>
+                              <img
+                                src="../../Images/What_is_a_solar_eclipse_article.png"
+                                style="height: 200px"
+                              />
+                              <div class="src-link">https://www.esa.int/Science_Exploration/Space_Science/What_is_an_eclipse</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head" style="margin-left: -450px">
+                                Atmosphere
+                              </div>
+                              <p>
+                                While not as dramatic as a total eclipse, a
+                                partial eclipse still leads to a noticeable
+                                dimming of the sky. The impact on the atmosphere
+                                is less pronounced compared to a total eclipse.
+                              </p>
+                              <div class="eff-head" style="margin-left: -350px">
+                                Solar Power Generation
+                              </div>
+                              <p>
+                                Satellites equipped with solar panels may
+                                experience a temporary reduction in power
+                                generation during a solar eclipse. This
+                                reduction can impact the satellite's operations
+                                and may necessitate the use of onboard batteries
+                                or alternative power sources.
+                              </p>
+                              <div class="eff-head" style="margin-left: -325px">
+                                Temperature Fluctuations
+                              </div>
+                              <p>
+                                The sudden reduction in sunlight during a solar
+                                eclipse can cause temperature fluctuations on
+                                the satellite. This can affect thermal control
+                                systems and may require adjustments to maintain
+                                optimal operating temperatures.
+                              </p>
+                              <div class="eff-head" style="margin-left: -410px">
+                                Communication
+                              </div>
+                              <p>
+                                Changes in the ionosphere and the Earth's
+                                atmosphere during a solar eclipse might affect
+                                satellite communication signals. However, the
+                                impact is generally minimal and temporary
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                Solar eclipses can only happen at New Moon
+                                because the Moon passes between the Sun and
+                                Earth during that Moon phase. However, not every
+                                New Moon results in a solar eclipse. This is
+                                because the plane of the Moon's orbital path
+                                around our planet is inclined at an angle of
+                                approximately 5° to Earth's orbital plane around
+                                the Sun, the ecliptic. The points where the 2
+                                orbital planes meet are called lunar nodes.
+                                Solar eclipses occur only when a New Moon takes
+                                place near a lunar node.
+                              </p>
+                              <img src="../../Images/solar-partial-perspect.jpeg" style="height: 180px;">
+                              <div class="src-link">https://www.rmg.co.uk/stories/topics/solar-eclipses-explained</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_partial">Overview</a>
+                        <!-- <a href="#s2_partial">Frequency</a> -->
+                        <a href="#s2_partial">Effect</a>
+                        <a href="#s3_partial" id="perspective_partial_btn"
+                          >Perspective</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-4">
+            <label for="tab4-2">
+              <div class="row tab4_align">
+                <div
+                  class="moon_solar_annular"
+                  style="width: 20px; height: 20px; margin-left: -10px"
+                >
+                  <div
+                    class="solar_annular"
+                    style="width: 16px; height: 16px"
+                  ></div>
+                </div>
+                <div class="topic_name">Annular</div>
+              </div>
+            </label>
+            <input id="tab4-2" name="tabs-four" type="radio" />
+            <div>
+              <div class="container" style="margin-left: -160px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_annular"></s>
+                      <s id="s2_annular"></s>
+                      <s id="s3_annular"></s>
+                      <!-- <s id="s4_annular"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                Although the Moon and Sun appear nearly the same
+                                size in the sky, their apparent sizes do change
+                                over time. That’s because the Moon’s orbit
+                                around Earth is not a perfect circle, and
+                                neither is Earth’s orbit around the Sun. Both
+                                orbits are slightly elliptical or oval-shaped,
+                                meaning that the Moon changes distance from us
+                                as it orbits Earth, and Earth changes distance
+                                from the Sun throughout the year.
+                              </p>
+                              <img
+                                src="../../Images/annular-solar-eclipse.png"
+                                style="height: 150px"
+                              /><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>
+                                During an annular eclipse, the part of the
+                                Moon’s shadow that extends from the end of the
+                                umbra is called the antumbra. Observers within
+                                the antumbra will see the annular eclipse, while
+                                those in the penumbra will see only a partial
+                                eclipse. The path traced across Earth by the
+                                antumbra is called the path of annularity.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p></p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head" style="margin-left: -450px">
+                                Atmosphere
+                              </div>
+                              <p>
+                                Similar to a total eclipse, an annular eclipse
+                                causes a reduction in sunlight and a temporary
+                                darkening of the sky. However, since the Sun is
+                                not entirely covered, the atmospheric effects
+                                are not as prominent as in a total eclipse.
+                              </p>
+                              <div class="eff-head" style="margin-left: -350px">
+                                Solar Power Generation
+                              </div>
+                              <p>
+                                Satellites equipped with solar panels may
+                                experience a temporary reduction in power
+                                generation during a solar eclipse. This
+                                reduction can impact the satellite's operations
+                                and may necessitate the use of onboard batteries
+                                or alternative power sources.
+                              </p>
+                              <div class="eff-head" style="margin-left: -325px">
+                                Temperature Fluctuations
+                              </div>
+                              <p>
+                                The sudden reduction in sunlight during a solar
+                                eclipse can cause temperature fluctuations on
+                                the satellite. This can affect thermal control
+                                systems and may require adjustments to maintain
+                                optimal operating temperatures.
+                              </p>
+                              <div class="eff-head" style="margin-left: -410px">
+                                Communication
+                              </div>
+                              <p>
+                                Changes in the ionosphere and the Earth's
+                                atmosphere during a solar eclipse might affect
+                                satellite communication signals. However, the
+                                impact is generally minimal and temporary
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                The name “annular” comes from the Latin word for ring, “annulus.” These eclipses are named for their darkest, or maximum, point even if it only lasts less than a second. If the characteristic ring of fire is visible from even just one location, the whole eclipse is called an annular solar eclipse.
+                              </p><img src="../../Images/annular-stages.png" style="width: 100%;"><div class='src-link'>https://www.greatamericaneclipse.com/phenomena</div><p>
+However, in most places and for most of the duration, an annular eclipse looks like a partial solar eclipse. This is also the case for total solar eclipses and for the rare hybrid solar eclipses which have an annular maximum point in some locations and a total maximum point in other locations
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_annular">Overview</a>
+                        <!-- <a href="#s2_annular">Frequency</a> -->
+                        <a href="#s2_annular">Effect</a>
+                        <a href="#s3_annular" id="perspective_annular_btn"
+                          >Perspective</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-4">
+            <label for="tab4-3">
+              <div class="row tab4_align">
+                <div class="moon_solar_total" style="width: 20px; height: 20px">
+                  <div
+                    class="solar_total"
+                    style="width: 20px; height: 20px"
+                  ></div>
+                </div>
+                <div class="topic_name" style="margin-left: -10px">Total</div>
+              </div>
+            </label>
+            <input id="tab4-3" name="tabs-four" type="radio" />
+            <div>
+              <div class="container" style="margin-left: -320px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_total"></s>
+                      <s id="s2_total"></s>
+                      <s id="s3_total"></s>
+                      <!-- <s id="s4_total"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                This happens when the Moon completely covers the
+                                Sun, casting a shadow on a specific region on
+                                Earth. The Moon's shadow has two parts: the
+                                penumbra (partial shadow) and the umbra (total
+                                shadow). Only people within the path of the
+                                Moon's umbra will see a total solar eclipse.
+                                Those in the penumbra will see a partial solar
+                                eclipse.
+                              </p>
+                              <img
+                                src="../../Images/total-solar-eclipse-com.png"
+                                style="height: 150px"
+                              /><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>
+                                As the shadow extends away from the Moon, the
+                                umbra narrows or gets smaller. By the time it
+                                reaches Earth, the umbra covers a relatively
+                                small area on our planet compared to the
+                                penumbra. That means the area that experiences a
+                                total eclipse is much smaller than the area that
+                                experiences a partial eclipse. A typical umbral
+                                path may be less than 50 miles wide, while the
+                                penumbral zone can span a thousand miles or
+                                more.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p></p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head" style="margin-left: -450px">
+                                Atmosphere
+                              </div>
+                              <p>
+                                During a total solar eclipse, the sky darkens
+                                dramatically as the Moon obscures the Sun. This
+                                sudden reduction in sunlight can cause a
+                                temporary drop in temperature, and the
+                                atmosphere responds by experiencing changes in
+                                pressure and wind patterns.
+                              </p>
+                              <div class="eff-head" style="margin-left: -350px">
+                                Solar Power Generation
+                              </div>
+                              <p>
+                                Satellites equipped with solar panels may
+                                experience a temporary reduction in power
+                                generation during a solar eclipse. This
+                                reduction can impact the satellite's operations
+                                and may necessitate the use of onboard batteries
+                                or alternative power sources.
+                              </p>
+                              <div class="eff-head" style="margin-left: -325px">
+                                Temperature Fluctuations
+                              </div>
+                              <p>
+                                The sudden reduction in sunlight during a solar
+                                eclipse can cause temperature fluctuations on
+                                the satellite. This can affect thermal control
+                                systems and may require adjustments to maintain
+                                optimal operating temperatures.
+                              </p>
+                              <div class="eff-head" style="margin-left: -410px">
+                                Communication
+                              </div>
+                              <p>
+                                Changes in the ionosphere and the Earth's
+                                atmosphere during a solar eclipse might affect
+                                satellite communication signals. However, the
+                                impact is generally minimal and temporary
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                A total solar eclipse happens when the Moon completely blocks the face of the Sun.</p><img src="../../Images/total-solar.jpg" style="height: 110px"><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+<p>
+It is the result of a cosmic coincidence. Even though the Sun is about 400 times bigger than the Moon, it is also about 400 times farther away. This makes the Sun and the Moon appear almost exactly the same size in our sky.
+</p><img src="../../Images/total-stages.png" style="width: 75%;"><div class='src-link'>https://www.greatamericaneclipse.com/phenomena</div><p>
+During a total solar eclipse, the Moon moves directly in front of the Sun and barely covers the solar disk. This allows observers in the center of the Moon’s shadow to briefly see the Sun’s outer atmosphere, the corona, which is too dim to see when the bright solar disk is not covered.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_total">Overview</a>
+                        <!-- <a href="#s2_total">Frequency</a> -->
+                        <a href="#s2_total">Effect</a>
+                        <a href="#s3_total" id="perspective_total_btn"
+                          >Perspective</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-4">
+            <label for="tab4-4">
+              <div class="row tab4_align">
+                <div
+                  class="moon_solar_hybrid"
+                  style="width: 20px; height: 20px"
+                >
+                  <div
+                    class="solar_hybrid"
+                    style="width: 20px; height: 20px"
+                  ></div>
+                </div>
+                <div class="topic_name" style="margin-left: 5px">Hybrid</div>
+              </div>
+            </label>
+            <input id="tab4-4" name="tabs-four" type="radio" />
+            <div>
+              <div class="container" style="margin-left: -160px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_hybrid"></s>
+                      <s id="s2_hybrid"></s>
+                      <s id="s3_hybrid"></s>
+                      <!-- <s id="s4_hybrid"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                Sometimes during a solar eclipse, the Moon’s
+                                umbra will reach Earth’s surface in some places,
+                                creating a total eclipse, but Earth’s surface
+                                will curve away from the shadow so that the
+                                umbra no longer reaches the planet’s surface in
+                                other places, creating an annular eclipse. When
+                                a solar eclipse appears total in some places but
+                                annular in others, it’s called a hybrid eclipse.
+                              </p>
+                              <img
+                                src="../../Images/super-rare-hybrid-solar-eclipse.png"
+                                style="height: 150px"
+                              /><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>
+                                Because Earth is continuously rotating, and the
+                                Moon is constantly moving in its orbit, the
+                                Moon’s shadow will travel across Earth’s
+                                surface, tracing a path. This is called the
+                                eclipse path. Within this area is a smaller path
+                                traced by the umbra, called the path of
+                                totality. The rapid movement of the Moon in its
+                                orbit causes the shadow of the Moon to sweep
+                                across the face of Earth in just four to five
+                                hours. At any location along the path of
+                                totality, the total phase of a solar eclipse may
+                                last only a few minutes, or even less.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p></p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head" style="margin-left: -450px">
+                                Atmosphere
+                              </div>
+                              <p>
+                                Similar to a total lunar eclipse, the partial
+                                eclipse doesn't have a direct impact on Earth's
+                                atmosphere. However, observers on Earth can
+                                witness a portion of the Moon darkening during
+                                this event.
+                              </p>
+                              <div class="eff-head" style="margin-left: -350px">
+                                Solar Power Generation
+                              </div>
+                              <p>
+                                Satellites equipped with solar panels may
+                                experience a temporary reduction in power
+                                generation during a solar eclipse. This
+                                reduction can impact the satellite's operations
+                                and may necessitate the use of onboard batteries
+                                or alternative power sources.
+                              </p>
+                              <div class="eff-head" style="margin-left: -325px">
+                                Temperature Fluctuations
+                              </div>
+                              <p>
+                                The sudden reduction in sunlight during a solar
+                                eclipse can cause temperature fluctuations on
+                                the satellite. This can affect thermal control
+                                systems and may require adjustments to maintain
+                                optimal operating temperatures.
+                              </p>
+                              <div class="eff-head" style="margin-left: -420px">
+                                Communication
+                              </div>
+                              <p>
+                                Changes in the ionosphere and the Earth's
+                                atmosphere during a solar eclipse might affect
+                                satellite communication signals. However, the
+                                impact is generally minimal and temporary
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                While hybrid solar eclipses represent a rare and interesting type of eclipse on a global scale, they look like standard total, annular, or partial eclipses, depending on the observer's location.
+</p><iframe src="https://giphy.com/embed/8MjXCoSauakOrcxHiZ" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/8MjXCoSauakOrcxHiZ"></a><div class='src-link'>https://giphy.com/gifs/8MjXCoSauakOrcxHiZ</div><p>
+However, since hybrid solar eclipses involve the thinnest parts of the Moon's umbra and antumbra, their main phase, where the Moon is positioned centrally in front of the Sun, is typically very short. As with total and annular eclipses, the Sun appears partially eclipsed before and after the main phase of a hybrid eclipse.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_hybrid">Overview</a>
+                        <!-- <a href="#s2_hybrid">Frequency</a> -->
+                        <a href="#s2_hybrid">Effect</a>
+                        <a href="#s3_hybrid" id="perspective_hybrid_btn"
+                          >Perspective</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../indextype.html"><button class="next_btn" style="left: 1150px; top: 520px" >Back</button></a>
+      <a href="../indextypelunar.html"><button class="next_btn" style="left: 1050px; top: 520px" >Next</button></a>
+      
+    </div>
+    <div class="selection">
+      <div class="container mt-4 topic">
+        <div class="row">Solar Eclipse</div>
+        <div class="row type-card" id="partialEclipse">
+          <div class="col-4 solar-img">
+            <div class="moon_solar_partial">
+              <img src="../../Images/SunIcon.png" style="width: 40px" />
+              <div class="solar_partial"></div>
+            </div>
+          </div>
+          <div class="col-6 solar_type">Partial Eclipse</div>
+        </div>
+        <div class="row type-card" id="annularEclipse">
+          <div class="col-4 solar-img">
+            <div class="moon_solar_annular">
+              <img src="../../Images/SunIcon.png" style="width: 40px" />
+              <div class="solar_annular"></div>
+            </div>
+          </div>
+          <div class="col-6 solar_type">Annular Eclipse</div>
+        </div>
+        <div class="row type-card" id="totalEclipse">
+          <div class="col-4 solar-img">
+            <div class="moon_solar_total">
+              <div class="solar_total"></div>
+            </div>
+          </div>
+          <div class="col-6 solar_type">Total Eclipse</div>
+        </div>
+        <div class="row type-card" id="hybridEclipse">
+          <div class="col-4 solar-img">
+            <div class="moon_solar_hybrid">
+              <img src="../../Images/SunIcon.png" style="width: 40px" />
+              <div class="solar_hybrid"></div>
+            </div>
+          </div>
+          <div class="col-6 solar_type">Hybrid Eclipse</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <a href='../../'><button>back</button></a>
+        <button id="move">move</button> -->
+    <script type="module" src="./solar.js"></script>
+  </body>
+</html>

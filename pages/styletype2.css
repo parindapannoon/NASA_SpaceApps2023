@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Mina&display=swap');
+:root {
+    --width: 500px;
+    --height: 500px;
+    --txt-clr: rgb(255, 255, 255);
+    --ff-10: 'Mina', sans-serif;}
+
+    :root {
+      --width: 500px;
+      --height: 500px;
+      --txt-clr: rgb(255, 255, 255);
+      --ff-10: 'Mina', sans-serif;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      font-family: var(--ff-10);
+  }
+    button {
+   
+      background-color: #00000000;
+      border: .2px solid #a74000;
+      border-radius: 10px;
+      color: #fff;
+      position: absolute;
+      top: 270px;
+      font-family: var(--ff-10);
+      transition-duration: 0.4s;
+      cursor: pointer;
+      padding: 12px;
+      box-shadow: 0 0 2px 0 rgb(255, 154, 114),
+                      0 0 20px 0 rgb(99, 39, 1),
+                      0 0 0px 0 rgb(151, 94, 3) inset;
+    }
+  
+  button:hover {
+      background-color: #d87504b5;
+      border: .5px solid rgba(15, 236, 236, 0);
+      border-radius: 10px;
+      color: #fff;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      padding: 15px;
+      box-shadow: 0 0 2px 0 rgba(255, 154, 114, 0.421),
+                      0 0 20px 0 rgb(101, 76, 61),
+                      0 0 0px 0 rgb(151, 94, 3) inset;
+    }
+    .button1 {
+      margin-left: -100px;
+    }
+    .button2 {
+      padding-right: 100px;
+    }
+.boy {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  }
+.rabbit {
+  position: absolute;
+  left:60%;
+  bottom: 50%;
+  width: 20%;
+}
+body{ overflow: hidden
+}
+
+.astro {
+    position:absolute;
+}
+
+.stars{
+    position:absolute;
+}
+#txt4 {
+  position: absolute;
+  color:#fff;
+  /* left: 60%; */
+margin-left: -500px;
+  bottom: -120px;
+}
+.moon_solar_hybrid {
+    position: absolute;
+ bottom: -100px;
+    left: 10px;
+  }
+  .content-section{
+    position: absolute;
+    color: yellow;
+    width: 650px;
+    margin-left: -600px;
+    margin-top: -250px;
+  
+  }
+  .container {
+    padding: 2px;
+    font-family: var(--ff-10);
+    color: #ffe32f;
+    position: absolute;
+  }
+  .solar_hybrid {
+    width: 400px;
+    height: 400px; /* Make it taller to simulate the Earth's shadow */
+    background-color: rgba(0, 0, 0, 0.95); /* Color of the Earth's shadow */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100px;
+    left: 60%;
+    opacity: 60%;
+    transform: translateX(-50%);
+  }
+  
+  .moon_solar_hybrid:hover .solar_hybrid {
+      animation: solar_hybrid_animate 5s ease-out infinite alternate;
+       /* Increase the shadow size on hover */
+  }
+  @keyframes solar_hybrid_animate {
+    0% {
+      bottom: 80px;
+      left: 60%;
+    }
+    100% {
+      bottom: 80px;
+      left: 80%;
+    }
+  }
+  .container {
+    font-family: var(--ff-10);
+    color: #ffe32f;
+    position: absolute;
+  }
+  @keyframes transitionIn{
+    from{ opacity: 0;
+    transform: rotateX(-20deg);}
+    to {opacity: 1;
+    transform: rotateX(0);
+    }
+}
+  .moon_solar_hybrid .moon_solar_hybrid {
+      animation: moon_solar_hybrid_animate 1s linear infinite alternate;
+       /* Increase the shadow size on hover */
+  }
+  @keyframes moon_solar_hybrid_animate {
+    0% {
+      box-shadow: 0 0 20px rgba(241, 123, 12, 0.3);
+    }
+    100% {
+      box-shadow: 5px 5px 20px rgba(241, 123, 12, 0.6);
+    }
+  }
