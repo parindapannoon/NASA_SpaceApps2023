@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width" />
+    <title>CodeClipse</title>
+
+    <link rel="stylesheet" href="./stylescience3.css" />
+  </head>
+
+  <body
+    background="../Images/beautiful-shot-blue-purple-sky-filled-with-starts.jpg"
+  >
+    <div class="container">
+      <div class="boy">
+        <img src="../Images/boy.png" width="200px"  />
+      </div>
+      <div class="rabbit">
+        <img src="../Images/rabbit.png" width="140px" />
+      </div>
+      <div id="txt3"></div>
+      <div class="moon_solar_hybrid"></div>
+      <div class="upcome">
+        <img src="../Images/upcome.png" style="width: 380px" />
+        
+      </div>
+      
+      <div class="page-container">
+        <div class="moon"></div>
+        <div class="behind-moon"></div>
+        <div class="content-section">
+          <h1>
+            Chapter 3
+            <h2>
+              <p>How do scientists know when/where eclipses will occur?</p>
+            </h2>
+            <h5>
+              <p>
+                Third chapter will explain about the geometry and mechanics of
+                Earth and the Moon orbit, also an eclipse season
+              </p>
+            </h5>
+          </h1>
+        </div>
+      </div>
+      <div class="btn-container">
+        <div class="button1">
+          <button onclick="startAnimation()">Next</button>
+        </div>
+        <div class="button2">
+          <a href="./luna_eclipse/luna.html"><button>Back</button></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var texts = [
+        "<h6>Peter: Now, I understand both types of the eclipse. But I want to see the real event. <br>Do you know when and where it will appear next? ",
+        "<h6><br>Mr.Rabbit: Yes! Here is the list of upcoming eclipses",
+        "<h6><br>Peter: Wow, so the next one is Partial eclipse on 28th October <br>in Americas, Europe, Asia, Africa and Australiain at. Um..how do scientists predict or know this?",
+        "<h6><br>Mr.Rabbit: Well, come with me, I will show you!",
+        "<h6><br>Image accquired from: https://eclipse.gsfc.nasa.gov/LEdecade/LEdecade2021.html",
+      ];
+      var currentIndex = 0;
+      function startAnimation() {
+        if (currentIndex < texts.length) {
+          var output = document.getElementById("txt3");
+          output.innerHTML += "<p>" + texts[currentIndex] + "</p>";
+          currentIndex++;
+        } else {
+          window.location.replace("./indexscience.html");
+        }
+      }
+    </script>
+  </body>
+</html>

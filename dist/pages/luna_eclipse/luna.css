@@ -1,0 +1,933 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1050; 
+}
+body{
+  width: 480px; 
+}
+.content-text{
+  font-size: 12px;
+  display: block;
+  align-self: start;
+}
+
+.src-link{
+  font-size: 8px;
+  margin-top: 1px;
+}
+.type-card {
+    width: 300px; 
+    height: 80px; 
+    background-color: rgba(0,0,0,.6);
+    padding: 10px;
+    border-radius: 50px 10px 10px 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: Metropolis,sans-serif;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+    margin: 5px;
+  }
+  .type-card:hover{
+    background-color: rgba(0,0,0,1);
+    box-shadow: 0 0 20px #0b3d91;
+    cursor: pointer;
+  }
+  .luna_type {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px;
+    text-align: right;
+    justify-content: end;
+  }
+  
+  #dynamic-ui {
+    --bgDark: rgba(0,0,0,.85);
+    --bgMed: rgba(0,0,0,.75);
+  }
+  .luna-img{
+    width: 80px;
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+  }
+  .moon_luna_total {
+    width: 40px;
+    height: 40px;
+    /* background-color: #ffa602;  */
+    border-radius: 50%; 
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.75);
+  }
+  
+  .luna_total {
+    width: 40px;
+    height: 40px; /* Make it taller to simulate the Earth's shadow */
+    /* background: linear-gradient(45deg, #fd8c0b, #f7972a , #f9aa4f, #f9e9d8, #ffffff); */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-position 0.5s;
+  }
+  .type-card:hover .moon_luna_total{
+    /* background: linear-gradient(45deg, #ffa602, #f5e9bb); Reverse gradient on hover */
+    animation: moveGradient 1s linear infinite alternate; /* Animation for gradient movement */
+  }
+  /* .type-card:hover .moon_luna_total {
+      animation: luna_total_animate 1s linear infinite alternate;
+       
+  } */
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 0%;
+      box-shadow: 5px 0px 20px  rgba(249, 233, 216, 0.75);
+    }
+    50% {
+      background-position: 0% 50%;
+      box-shadow: 5px 2.5px 20px rgba(249, 233, 216, 0.75);
+    }
+    100% {
+      background-position: 0% 100%;
+      box-shadow: 5px 6px 20px  rgba(249, 233, 216, 0.75);
+    }
+  }
+
+
+  .moon_luna_partial {
+    width: 40px;
+    height: 40px;
+    
+    border-radius: 50%; /* Create a circular moon */
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    /* top: 5px; */
+  }
+  
+  .luna_partial {
+    width: 40px;
+    height: 40px; /* Make it taller to simulate the Earth's shadow */
+    background-color: rgba(0,0,0,95); /* Color of the Earth's shadow */
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    left: 20%;
+    transform: translateX(-50%);
+  }
+  
+  .type-card:hover .luna_partial {
+      animation: luna_partial_animate 1s linear infinite alternate;
+       /* Increase the shadow size on hover */
+  }
+  
+  @keyframes luna_partial_animate {
+    0% {
+      top: 13px;
+      left: 20%;
+    }
+    100% {
+      top: 5px;
+      left: 40%;
+    }
+  }
+  
+  .moon_luna_penumbral {
+    width: 40px;
+    height: 40px;
+    /* background-color: #ffa602;  */
+    border-radius: 50%; 
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+  }
+  
+  .luna_penumbral {
+    width: 40px;
+    height: 40px; /* Make it taller to simulate the Earth's shadow */
+    /* background: linear-gradient(45deg, #fd8c0b, #f7972a , #f9aa4f, #f9e9d8, #ffffff); */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-position 0.5s;
+  }
+  .type-card:hover .moon_luna_penumbral{
+    /* background: linear-gradient(45deg, #ffa602, #f5e9bb); Reverse gradient on hover */
+    animation: luna_penumbral_animate 1s linear infinite alternate; /* Animation for gradient movement */
+  }
+  @keyframes luna_penumbral_animate {
+    0% {
+      background-position: 0% 0%;
+      box-shadow: 5px 0px 10px  rgba(228, 228, 227, 0.75);
+    }
+    50% {
+      background-position: 0% 50%;
+      box-shadow: 5px 2.5px 10px rgba(228, 228, 227, 0.75);
+    }
+    100% {
+      background-position: 0% 100%;
+      box-shadow: 5px 6px 10px  rgba(228, 228, 227, 0.75);
+    }
+  }
+  
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 100vw;
+  background: #494e57;
+  /* overflow: hidden; */
+}
+
+button {
+  background-color: #00000000;
+  border: 0.2px solid #a74000;
+  border-radius: 10px;
+}
+.container {
+  margin-top: -45px;
+  width: 600px;
+  /* height: 500px; */
+  padding-top: 40px;
+  /* margin-left: 0px; */
+  /* padding: 40px 40px; */
+  border-radius: 12px;
+  /* background: rgba(0,0,0,.6); */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+  /* box-shadow: 0px 4px 8px rgba(254, 205, 211, 0.1), 0px 8px 8px rgba(254, 205, 211, 0.1), 0px 16px 7px rgba(254, 205, 211, 0.1); */
+}
+
+.container .topic {
+  display: flex;
+  margin-top: -25px;
+  font-size: 35px;
+  font-weight: 600;
+  max-height: 35px;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.sub-input {
+  display: none;
+}
+.btn_align {
+  align-items: end;
+  right: 0px;
+  width: 360px;
+}
+.content {
+  /* top: 5px; */
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  /* margin-left: 120px; */
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  height: 480px;
+  width: 620px;
+}
+
+/* 
+#home:checked ~ .list label.home,
+#blog:checked ~ .list label.blog,
+#help:checked ~ .list label.help,
+#code:checked ~ .list label.code,
+#about:checked ~ .list label.about {
+  color: #ffffff;
+} */
+
+.content .text-content {
+  width: 650px;
+  height: 480px;
+  padding: 20px 40px;
+  /* margin: 0px 20px; */
+  /* margin-left: 100px; */
+  /* border-radius: 12px; */
+  /* background: rgba(61, 60, 60, 0.6); */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+  color: #ffffff;
+}
+
+/* .content .text {
+  display: none;
+} */
+
+.content .text .title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.eff-head{
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: -460px;
+  padding-bottom: 5px;
+}
+.container .text p {
+  text-align: justify;
+}
+/* 
+.content .text-content .home {
+  display: block;
+} */
+
+/* #home:checked ~ .text-content .home,
+#blog:checked ~ .text-content .blog,
+#help:checked ~ .text-content .help,
+#code:checked ~ .text-content .code,
+#about:checked ~ .text-content .about {
+  display: block;
+} */
+
+/* #blog:checked ~ .text-content .home,
+#help:checked ~ .text-content .home,
+#code:checked ~ .text-content .home,
+#about:checked ~ .text-content .home {
+  display: none;
+} */
+
+/* .content .list label:hover {
+  color: #0b3d91;
+} */
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1050;
+  width: 100vw;
+  height: 100vh;
+}
+
+.topic {
+  width: 320px;
+  height: 320px;
+  background-color: rgb(0, 0, 0, 0.2);
+  color: white;
+  font-family: Metropolis, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 10px;
+  text-align: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.type-card:hover {
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 20px #0b3d91;
+  cursor: pointer;
+}
+.solar_type {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px;
+  text-align: right;
+  justify-content: end;
+}
+
+#dynamic-ui {
+  --bgDark: rgba(0, 0, 0, 0.85);
+  --bgMed: rgba(0, 0, 0, 0.75);
+}
+.solar-img {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.moon_solar_total {
+  width: 40px;
+  height: 40px;
+  background-color: #ecaf2b; /* Color of the moon */
+  border-radius: 50%; /* Create a circular moon */
+  position: relative;
+  box-shadow: 0 0 20px rgba(241, 123, 12, 0.75);
+}
+.topic_name {
+  margin-left: 20px;
+}
+
+.solar_total {
+  width: 40px;
+  height: 40px; /* Make it taller to simulate the Earth's shadow */
+  background-color: #000; /* Color of the Earth's shadow */
+  border-radius: 50%;
+  position: absolute;
+  /* bottom: 0; */
+  left: 50%;
+  transform: translateX(-50%);
+  /* animation: eclipse-animation 5s linear infinite alternate;  */
+}
+.moon_solar_total:hover {
+  animation: solar_total_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+.type-card:hover .moon_solar_total,
+.tab4_align:hover .moon_solar_total {
+  animation: solar_total_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+
+@keyframes solar_total_animate {
+  0% {
+    box-shadow: 0 0 10px rgba(241, 123, 12, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(241, 123, 12, 0.8);
+  }
+}
+
+.moon_solar_partial {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(241, 123, 12); /* Color of the moon */
+  border-radius: 50%; /* Create a circular moon */
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 125, 3, 0.75);
+  /* top: 5px; */
+}
+
+.solar_partial {
+  width: 40px;
+  height: 40px; /* Make it taller to simulate the Earth's shadow */
+  background-color: rgba(0, 0, 0, 95); /* Color of the Earth's shadow */
+  border-radius: 50%;
+  position: absolute;
+  top: -13px;
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.type-card:hover .solar_partial,
+.tab4_align:hover .solar_partial {
+  animation: solar_partial_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+
+@keyframes solar_partial_animate {
+  0% {
+    top: -13px;
+    left: 70%;
+  }
+  100% {
+    top: -5px;
+    left: 60%;
+  }
+}
+
+.moon_solar_annular {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #ff0000, #ffe400); /* Color of the moon */
+  border-radius: 50%; /* Create a circular moon */
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 125, 3, 0.75);
+  left: 15%;
+}
+
+.solar_annular {
+  width: 36px;
+  height: 36px; /* Make it taller to simulate the Earth's shadow */
+  background-color: rgba(0, 0, 0, 0.95); /* Color of the Earth's shadow */
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: eclipse-animation 5s linear infinite alternate; /* Animation */
+}
+.type-card:hover .solar_annular,
+.tab4_align:hover .solar_annular {
+  animation: solar_annular_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+@keyframes solar_annular_animate {
+  0% {
+    top: 0px;
+    left: 60%;
+  }
+  100% {
+    top: 2px;
+    left: 50%;
+  }
+}
+
+.moon_solar_hybrid {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(241, 123, 12); /* Color of the moon */
+  border-radius: 50%; /* Create a circular moon */
+  position: relative;
+  box-shadow: 5px 5px 20px rgba(241, 123, 12, 0.4);
+  left: 10%;
+}
+
+.solar_hybrid {
+  width: 38px;
+  height: 38px; /* Make it taller to simulate the Earth's shadow */
+  background-color: rgba(0, 0, 0, 0.95); /* Color of the Earth's shadow */
+  border-radius: 50%;
+  position: absolute;
+  bottom: -1px;
+  left: 55%;
+  transform: translateX(-50%);
+}
+
+.type-card:hover .solar_hybrid,
+.tab4_align:hover .solar_hybrid {
+  animation: solar_hybrid_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+@keyframes solar_hybrid_animate {
+  0% {
+    bottom: -2px;
+    left: 65%;
+  }
+  100% {
+    bottom: -1px;
+    left: 55%;
+  }
+}
+
+.type-card:hover .moon_solar_hybrid,
+.tab4_align:hover .moon_solar_hybrid {
+  animation: moon_solar_hybrid_animate 1s linear infinite alternate;
+  /* Increase the shadow size on hover */
+}
+@keyframes moon_solar_hybrid_animate {
+  0% {
+    box-shadow: 0 0 20px rgba(241, 123, 12, 0.3);
+  }
+  100% {
+    box-shadow: 5px 5px 20px rgba(241, 123, 12, 0.6);
+  }
+}
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: 250px;
+  width: 650px;
+  /* overflow: hidden; */
+}
+.tabs [class^="tab"] label,
+.tabs [class*=" tab"] label {
+  color: #efedef;
+  cursor: pointer;
+  display: block;
+  margin-top: -270px;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 1rem 0;
+  text-align: center;
+}
+.tabs [class^="tab"] [type="radio"],
+.tabs [class*=" tab"] [type="radio"] {
+  border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs [class^="tab"] [type="radio"]:hover,
+.tabs [class^="tab"] [type="radio"]:focus,
+.tabs [class*=" tab"] [type="radio"]:hover,
+.tabs [class*=" tab"] [type="radio"]:focus {
+  border-bottom: 1px solid #0b3d91;
+  box-shadow: 0 0 20px (255, 255, 255, 1);
+}
+.tabs [class^="tab"] [type="radio"]:checked,
+.tabs [class*=" tab"] [type="radio"]:checked {
+  border-bottom: 2px solid #0b3d91;
+  box-shadow: 0 0 20px (255, 255, 255, 1);
+}
+.tabs [class^="tab"] [type="radio"]:checked + div,
+.tabs [class*=" tab"] [type="radio"]:checked + div {
+  opacity: 1;
+}
+.tabs [class^="tab"] [type="radio"] + div,
+.tabs [class*=" tab"] [type="radio"] + div {
+  display: block;
+  opacity: 0;
+  padding: 2rem 0;
+  width: 90%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tabs .tab-4 {
+  width: 33.33%; /* Set the width to 25% for 4 tabs */
+  height: 0px;
+}
+.tabs .tab-4 [type="radio"] + div {
+  width: 300%; /* Adjust the width for 4 tabs */
+  margin-left: 300%; /* Adjust the margin-left for 4 tabs */
+}
+.tabs .tab-4 [type="radio"]:checked + div {
+  margin-left: 0; /* Adjust the margin-left for 4 tabs */
+}
+.tabs .tab-4:last-child [type="radio"] + div {
+  margin-left: 200%; /* Adjust the margin-left for the last tab in 4 tabs */
+}
+.tabs .tab-4:last-child [type="radio"]:checked + div {
+  margin-left: -200%; /* Adjust the margin-left for the last tab in 4 tabs */
+}
+.tab4_align {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.CSSgal {
+  position: relative;
+  overflow: hidden;
+  height: 430px; /* Or set a fixed height */
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0;
+  transition: 0.8s;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+  font-size: 1rem;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+  background: none 50% no-repeat;
+  background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 100%;
+  height: 0;
+}
+
+.CSSgal .prevNext > div + div {
+  visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+  background: #fff;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px; /* If you want to place numbers */
+  text-align: center;
+  opacity: 0.7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+}
+.CSSgal .prevNext a:hover {
+  opacity: 1;
+}
+.CSSgal .prevNext a + a {
+  left: auto;
+  right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  /* padding: 10px 0; */
+  width: 100%;
+  text-align: center;
+}
+.CSSgal .bullets > a {
+  display: inline-block;
+  /* width:       150px; */
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: center;
+  background: rgba(255, 255, 255, 1);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CSSgal .bullets > a + a {
+  background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.CSSgal .bullets > a:hover {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal > s:target ~ .bullets > * {
+  background: rgba(255, 255, 255, 0.5);
+}
+/* ACTIVE */
+#s1_penumbral:target ~ .bullets > *:nth-child(1) {
+  background: rgba(255, 255, 255, 1);
+}
+#s2_penumbral:target ~ .bullets > *:nth-child(2) {
+  background: rgba(255, 255, 255, 1);
+}
+#s3_penumbral:target ~ .bullets > *:nth-child(3) {
+  background: rgba(255, 255, 255, 1);
+}
+#s4_penumbral:target ~ .bullets > *:nth-child(4) {
+  background: rgba(255, 255, 255, 1);
+}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+/* .CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1_penumbral:target ~ .prevNext > *:nth-child(1) {
+  visibility: visible;
+}
+#s2_penumbral:target ~ .prevNext > *:nth-child(2) {
+  visibility: visible;
+}
+#s3_penumbral:target ~ .prevNext > *:nth-child(3) {
+  visibility: visible;
+}
+#s4_penumbral:target ~ .prevNext > *:nth-child(4) {
+  visibility: visible;
+}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1_penumbral:target ~ .slider {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+#s2_penumbral:target ~ .slider {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+#s3_penumbral:target ~ .slider {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+#s4_penumbral:target ~ .slider {
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
+}
+/* More slides? Add here more rules */
+#s1_partial:target ~ .bullets > *:nth-child(1) {
+  background: rgba(255, 255, 255, 1);
+}
+#s2_partial:target ~ .bullets > *:nth-child(2) {
+  background: rgba(255, 255, 255, 1);
+}
+#s3_partial:target ~ .bullets > *:nth-child(3) {
+  background: rgba(255, 255, 255, 1);
+}
+#s4_partial:target ~ .bullets > *:nth-child(4) {
+  background: rgba(255, 255, 255, 1);
+}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+/* .CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1_partial:target ~ .prevNext > *:nth-child(1) {
+  visibility: visible;
+}
+#s2_partial:target ~ .prevNext > *:nth-child(2) {
+  visibility: visible;
+}
+#s3_partial:target ~ .prevNext > *:nth-child(3) {
+  visibility: visible;
+}
+#s4_partial:target ~ .prevNext > *:nth-child(4) {
+  visibility: visible;
+}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1_partial:target ~ .slider {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+#s2_partial:target ~ .slider {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+#s3_partial:target ~ .slider {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+#s4_partial:target ~ .slider {
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
+}
+
+#s1_total:target ~ .bullets > *:nth-child(1) {
+  background: rgba(255, 255, 255, 1);
+}
+#s2_total:target ~ .bullets > *:nth-child(2) {
+  background: rgba(255, 255, 255, 1);
+}
+#s3_total:target ~ .bullets > *:nth-child(3) {
+  background: rgba(255, 255, 255, 1);
+}
+#s4_total:target ~ .bullets > *:nth-child(4) {
+  background: rgba(255, 255, 255, 1);
+}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+/* .CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1_total:target ~ .prevNext > *:nth-child(1) {
+  visibility: visible;
+}
+#s2_total:target ~ .prevNext > *:nth-child(2) {
+  visibility: visible;
+}
+#s3_total:target ~ .prevNext > *:nth-child(3) {
+  visibility: visible;
+}
+#s4_total:target ~ .prevNext > *:nth-child(4) {
+  visibility: visible;
+}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1_total:target ~ .slider {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+}
+#s2_total:target ~ .slider {
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+#s3_total:target ~ .slider {
+  transform: translateX(-200%);
+  -webkit-transform: translateX(-200%);
+}
+#s4_total:target ~ .slider {
+  transform: translateX(-300%);
+  -webkit-transform: translateX(-300%);
+}
+
+
+.CSSgal {
+  color: #fff;
+  text-align: center;
+}
+.CSSgal .slider h2 {
+  margin-top: 40vh;
+  font-weight: 200;
+  letter-spacing: -0.06em;
+  word-spacing: 0.2em;
+  font-size: 3em;
+}
+.CSSgal a {
+  width: 100px;
+  border-radius: 15px;
+  margin: 3px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+.description {
+  display: none;
+}
+
+.selection{
+  display: block;
+}
+
+.tips{
+  /* margin-top: -250px; */
+  background-color: #ffffff;
+  height: 100px;
+  width: 500px;
+  /* position: relative; */
+  /* display: flex;1 */
+  margin-left: 400px;
+}
+
+
+.tab_container{
+  display: flex;
+  justify-items: end;
+  align-items: end;
+  /* margin-top: 270px; */
+  margin-left: 0px;
+}
+button {
+   
+  background-color: #00000000;
+  border: .2px solid #a74000;
+  border-radius: 10px;
+  color: #fff;
+  position: absolute;
+  top: 450px;
+  font-family: var(--ff-10);
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 12px;
+  box-shadow: 0 0 2px 0 rgb(255, 154, 114),
+                  0 0 20px 0 rgb(99, 39, 1),
+                  0 0 0px 0 rgb(151, 94, 3) inset;
+}
+
+button:hover {
+  background-color: #d87504b5;
+  border: .5px solid rgba(15, 236, 236, 0);
+  border-radius: 10px;
+  color: #fff;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 15px;
+  box-shadow: 0 0 2px 0 rgba(255, 154, 114, 0.421),
+                  0 0 20px 0 rgb(101, 76, 61),
+                  0 0 0px 0 rgb(151, 94, 3) inset;
+}
