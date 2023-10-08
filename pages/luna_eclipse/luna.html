@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eclipse</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./luna.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../solar_eclipse/another.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <canvas id="bg"></canvas>
+    <div class="description">
+      <div class="tab_container">
+        <div class="tabs">
+          <div class="tab-4">
+            <label for="tab4-1">
+              <div class="row tab4_align">
+                <div
+                  class="moon_luna_penumbral"
+                  style="width: 20px; height: 20px"
+                >
+                  <img src="../../Images/moonIcon.png" style="width: 20px" />
+                  <div
+                    class="luna_penumbral"
+                    style="width: 20px; height: 20px"
+                  ></div>
+                </div>
+                <div class="topic_name" style="margin-left: -10px">
+                  Penumbral
+                </div>
+              </div>
+            </label>
+            <input
+              id="tab4-1"
+              name="tabs-four"
+              type="radio"
+              checked="checked"
+            />
+            <div>
+              <div class="container" style="margin-left: 5px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_penumbral"></s>
+                      <s id="s2_penumbral"></s>
+                      <s id="s3_penumbral"></s>
+                      <!-- <s id="s4_penumbral"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                A penumbral lunar eclipse occurs when the Sun, Earth, and the Moon are imperfectly aligned. When this happens, the Earth blocks some of the Sun's light from directly reaching the Moon's surface and covers all or part of the Moon with the outer part of its shadow.
+
+Since the penumbra (areas in yellow line) is much fainter than the dark core of the Earth's shadow, the umbra (areas in red line), a penumbral eclipse of the Moon is often difficult to tell apart from a normal Full Moon.
+                              </p>
+                              <img src="../../Images/totallunareclipsepenumbral.png" style="height: 170px;"><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>
+                                Penumbral lunar eclipses can be partial or full. During a partial penumbral eclipse, only part of the Earth's penumbra covers the Moon's surface. This kind of eclipse is almost impossible to see.
+
+During a full penumbral eclipse, on the other hand, the Earth's penumbra covers the entire face of the Moon. Very keen observers may then see the Moon turn a shade darker during the maximum of the eclipse.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head">Atmosphere</div>
+                              <p>
+                                Penumbral lunar eclipses are subtle and often
+                                challenging to observe because the Moon only
+                                slightly dims as it passes through the outer
+                                shadow of the Earth. There's minimal impact on
+                                the Moon's appearance, and the Earth's
+                                atmosphere is not significantly affected.
+                              </p>
+                              <div class="eff-head" style="margin-left: -300px">
+                                Communication and Navigation
+                              </div>
+                              <p>
+                                Lunar eclipses usually don't have a significant
+                                impact on satellite communication or navigation
+                                systems.
+                              </p>
+                              <div class="eff-head" style="margin-left: -435px">
+                                Thermal Effects
+                              </div>
+                              <p>
+                                Satellites in low Earth orbit (LEO) may
+                                experience changes in temperature during a lunar
+                                eclipse, as the Earth's shadow causes a decrease
+                                in incoming solar radiation. This can affect
+                                thermal control systems.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                Every lunar eclipse begins and ends with a penumbral stage. This is where the Moon passes through the light, outer part of Earth’s shadow, called the penumbra.
+
+    Often, the Moon also passes through Earth’s dark, inner shadow—known as the umbra—producing a partial or total lunar eclipse.
+</p><img src="../../Images/penumbral-eclipse.png" style="height: 200px;"><div class="src-link">https://www.timeanddate.com/eclipse/</div><p>
+But sometimes, in around one out of three lunar eclipses, the Moon doesn’t reach the umbra: the penumbral stage is as deep as the eclipse gets. These events are called penumbral eclipses.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_penumbral">Overview</a>
+                        <a href="#s2_penumbral">Effect</a>
+                        <a href="#s3_penumbral">Perspective</a>
+                        <!-- <a href="#s4_penumbral" id="perspective_penumbral_btn">Perspective</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-4">
+            <label for="tab4-2">
+              <div class="row tab4_align">
+                <div
+                  class="moon_luna_partial"
+                  style="width: 20px; height: 20px; margin-left: -10px"
+                >
+                  <img src="../../Images/moonIcon.png" style="width: 20px" />
+                  <div
+                    class="luna_partial"
+                    style="width: 20px; height: 20px; top: 6px"
+                  ></div>
+                </div>
+                <div class="topic_name">Partial</div>
+              </div>
+            </label>
+            <input id="tab4-2" name="tabs-four" type="radio" />
+            <div>
+              <div class="container" style="margin-left: -212px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_partial"></s>
+                      <s id="s2_partial"></s>
+                      <s id="s3_partial"></s>
+                      <!-- <s id="s4_partial"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                A partial lunar eclipse occurs when the Earth moves between the Sun and Moon but the three celestial bodies do not form a straight line in space. When that happens, a small part of the Moon's surface is covered by the darkest, central part of the Earth's shadow, called the umbra (areas in red line). The rest of the Moon is covered by the outer part of the Earth's shadow called the penumbra (areas in yellow line).
+                              </p>
+                              <img src="../../Images/totallunareclipsepartial.png" style="height: 190px;"><div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>For a partial lunar eclipse to occur, two celestial events must happen at the same time which is a Full Moon and The Sun, Earth, and Moon must be aligned in almost a straight line.</li>
+                                </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head">Atmosphere</div>
+                              <p>
+                                Similar to a total lunar eclipse, the partial
+                                eclipse doesn't have a direct impact on Earth's
+                                atmosphere. However, observers on Earth can
+                                witness a portion of the Moon darkening during
+                                this event.
+                              </p>
+                              <div class="eff-head" style="margin-left: -300px">
+                                Communication and Navigation
+                              </div>
+                              <p>
+                                Lunar eclipses usually don't have a significant
+                                impact on satellite communication or navigation
+                                systems.
+                              </p>
+                              <div class="eff-head" style="margin-left: -435px">
+                                Thermal Effects
+                              </div>
+                              <p>
+                                Satellites in low Earth orbit (LEO) may
+                                experience changes in temperature during a lunar
+                                eclipse, as the Earth's shadow causes a decrease
+                                in incoming solar radiation. This can affect
+                                thermal control systems.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                              <p>
+                                Patial lunar eclipse consist of 5 stages which is
+                              
+                              <br>
+                              <b>Penumbral eclipse begins:</b> The Earth's penumbra starts covering the Moon's surface.
+                              <br>
+                              <b>Partial eclipse begins:</b> The Earth's umbra starts moving over the Moon.
+                              <br>
+                              <b>Maximum eclipse:</b> The Earth's umbra covers the largest part of the Moon.
+                              <br>
+                              <b>Partial eclipse ends:</b> The Earth's umbra no longer covers the Moon.
+                              <br>
+                              <b>Penumbral eclipse ends:</b> The Earth no longer casts a shadow on the Moon. This marks the end of the eclipse.
+                          </p>
+                          <img src="../../Images/partial_lunar_perspec.jpg" style="height: 150px;"><div class="src-link">Facebook: Stargazing Singapore</div>
+                          <p>
+                          The Moon's orientation in the sky depends on the observer's latitude. This means the eclipse will appear to play out in different directions depending on your location.
+                        </p>    
+                        </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_partial">Overview</a>
+                        <a href="#s2_partial">Effect</a>
+                        <a href="#s3_partial">Perspective</a>
+                        <!-- <a href="#s4_partial" id="perspective_partial_btn">Perspective</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-4">
+            <label for="tab4-3">
+              <div class="row tab4_align">
+                <div class="moon_luna_total" style="width: 20px; height: 20px">
+                  <img
+                    src="../../Images/TotalmoonIcon.png"
+                    style="width: 20px"
+                  />
+                  <div
+                    class="luna_total"
+                    style="width: 20px; height: 20px"
+                  ></div>
+                </div>
+                <div class="topic_name" style="margin-left: -10px">Total</div>
+              </div>
+            </label>
+            <input id="tab4-3" name="tabs-four" type="radio" />
+            <div>
+              <div class="container" style="margin-left: 5px">
+                <div class="content">
+                  <div class="row text-content">
+                    <div class="CSSgal">
+                      <s id="s1_total"></s>
+                      <s id="s2_total"></s>
+                      <s id="s3_total"></s>
+                      <!-- <s id="s4_total"></s> -->
+                      <div class="slider">
+                        <div>
+                          <div class="home text" id="home_content">
+                            <div class="title">Overview</div>
+                            <div class="content-text">
+                              <p>
+                                A total lunar eclipse happens when the Earth
+                                completely covers the Moon, and the Moon enters
+                                the Earth's umbra (the central, darkest part of
+                                the shadow). Like solar eclipses, lunar eclipses
+                                have two parts: the penumbral shadow (outer
+                                part, area in yellow line) and the umbral shadow (inner part, area in red line). People
+                                on the side of the Earth facing the Moon during
+                                a lunar eclipse will witness it. The extent of
+                                the eclipse depends on whether the Moon passes
+                                through the penumbral or umbral shadow.
+                              </p>
+                              <img src="../../Images/total-lunar-eclipse-blood-moon.png" style="height: 180px;">
+                              <div class="src-link">https://www.timeanddate.com/eclipse/</div>
+                              <p>
+                                During a lunar eclipse, the Moon turns red
+                                because the only sunlight reaching the Moon
+                                passes through Earth’s atmosphere. The more dust
+                                or clouds in Earth’s atmosphere during the
+                                eclipse, the redder the Moon will appear. It’s
+                                as if all the world’s sunrises and sunsets are
+                                projected onto the Moon.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div>
+                                            <div class="blog text" id="blog_content">
+                                                <div class="title">Frequency</div>
+                                                <div class="content-text"><p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Dolor reprehenderit, delectus enim velit quis modi vel
+                                                    facere maxime amet sit sequi nemo nisi debitis expedita
+                                                    soluta, doloremque ex ullam et quos id similique eius
+                                                    dignissimos odio. Obcaecati ullam mollitia hic illum!
+                                                    Accusantium earum odio dolore, natus consequatur voluptas
+                                                    in! Hic quae distinctio veritatis laboriosam illo dolor
+                                                    voluptates, vero accusantium corporis ab error nemo harum
+                                                    aperiam! Eaque blanditiis voluptas molestiae quam?
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                        <div>
+                          <div class="help text" id="help_content">
+                            <div class="title">Effects</div>
+                            <div class="content-text">
+                              <div class="eff-head">Atmosphere</div>
+                              <p>
+                                During a total lunar eclipse, the Moon can take
+                                on a reddish hue due to Earth's atmosphere
+                                refracting and scattering sunlight. This
+                                phenomenon is often referred to as the "blood
+                                moon." While the eclipse doesn't directly affect
+                                Earth's atmosphere, the coloration is a result
+                                of sunlight passing through the Earth's
+                                atmosphere before reaching the Moon.
+                              </p>
+                              <div class="eff-head" style="margin-left: -300px">
+                                Communication and Navigation
+                              </div>
+                              <p>
+                                Lunar eclipses usually don't have a significant
+                                impact on satellite communication or navigation
+                                systems.
+                              </p>
+                              <div class="eff-head" style="margin-left: -435px">
+                                Thermal Effects
+                              </div>
+                              <p>
+                                Satellites in low Earth orbit (LEO) may
+                                experience changes in temperature during a lunar
+                                eclipse, as the Earth's shadow causes a decrease
+                                in incoming solar radiation. This can affect
+                                thermal control systems.
+                              </p>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="pers text" id="pers_content">
+                            <div class="title">Perspective</div>
+                            <div class="content-text">
+                            
+                            <img
+                              src="../../Images/shadow_diagram_cst_202211_print.jpg"
+                              style="height: 150px;"
+                            /><div class="src-link">https://svs.gsfc.nasa.gov/14151/</div>
+                            <p>
+                                There are 7 stages of a total lunar eclipse
+                              <br>
+                              <b>Penumbral eclipse begins:</b> This begins when the penumbral part of Earth's shadow starts moving over the Moon. This phase is not easily seen by the naked eye.                             <br>
+                              
+                              <b>Partial eclipse begins:</b> Earth's umbra starts covering the Moon, making the eclipse more visible.
+                              <br>
+                              <b>Total eclipse begins:</b> Earth's umbra completely covers the Moon and the Moon is red, brown, or yellow in color.
+                              <br>
+                              <b>Maximum eclipse:</b> This is the middle of the total eclipse.
+                              <br>
+                              <b>Total eclipse ends:</b> At this stage, Earth's umbra starts moving away from the Moon's surface.
+                              <br>
+                              <b>Partial eclipse ends:</b>  Earth's umbra completely leaves the Moon's surface.
+                              <br>
+                              <b>Penumbral eclipse ends:</b> At this point, the eclipse ends and Earth's shadow completely moves away from the Moon.
+                            </p>
+                        </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bullets">
+                        <a href="#s1_total">Overview</a>
+                        <a href="#s2_total">Effect</a>
+                        <a href="#s3_total">Perspective</a>
+                        <!-- <a href="#s4_total" id="perspective_total_btn">Perspective</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <a href="../indextypelunar.html"><button class="next_btn" style="left: 1150px; top: 520px" >Back</button></a>
+      <a href="../indexscience3.html"><button class="next_btn" style="left: 1050px; top: 520px" >Next</button></a>
+      
+    </div>
+    <div class="selection">
+      <div class="container mt-4 topic">
+        <div class="row">Lunar Eclipse</div>
+        <div class="row type-card" id="penumbralEclipse">
+          <div class="col-4 luna-img">
+            <div class="moon_luna_penumbral">
+              <img src="../../Images/moonIcon.png" style="width: 40px" />
+              <div class="luna_penumbral"></div>
+            </div>
+          </div>
+          <div class="col-6 luna_type">Penumbral Eclipse</div>
+        </div>
+
+        <div class="row type-card" id="partialEclipse">
+          <div class="col-4 luna-img">
+            <div class="moon_luna_partial">
+              <img src="../../Images/moonIcon.png" style="width: 40px" />
+              <div class="luna_partial"></div>
+            </div>
+          </div>
+          <div class="col-6 luna_type">Partial Eclipse</div>
+        </div>
+
+        <div class="row type-card" id="totalEclipse">
+          <div class="col-4 luna-img">
+            <div class="moon_luna_total">
+              <img src="../../Images/TotalmoonIcon.png" style="width: 40px" />
+              <div class="luna_total"></div>
+            </div>
+          </div>
+          <div class="col-6 luna_type">Total Eclipse</div>
+        </div>
+      </div>
+      <!-- <div class="row type-card">
+                <div class="col-4 luna-img">
+                    <div class="moon_luna_hybrid">
+                        <div class="luna_hybrid"></div>
+                    </div>
+                </div> 
+                <div class="col-6 luna_type">Hybrid Eclipse</div>
+            </div> -->
+    </div>
+    <!-- <a href='../../'><button>back</button></a> -->
+    <script type="module" src="./luna.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Mina&display=swap');
+:root {
+    --width: 500px;
+    --height: 500px;
+    --txt-clr: rgb(255, 255, 255);
+    --ff-10: 'Mina', sans-serif;}
+
+    :root {
+      --width: 500px;
+      --height: 500px;
+      --txt-clr: rgb(255, 255, 255);
+      --ff-10: 'Mina', sans-serif;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+      font-family: var(--ff-10);
+  }
+    button {
+   
+      background-color: #00000000;
+      border: .2px solid #a74000;
+      border-radius: 10px;
+      color: #fff;
+      position: absolute;
+      top: 270px;
+      font-family: var(--ff-10);
+      transition-duration: 0.4s;
+      cursor: pointer;
+      padding: 12px;
+      box-shadow: 0 0 2px 0 rgb(255, 154, 114),
+                      0 0 20px 0 rgb(99, 39, 1),
+                      0 0 0px 0 rgb(151, 94, 3) inset;
+    }
+  
+  button:hover {
+      background-color: #d87504b5;
+      border: .5px solid rgba(15, 236, 236, 0);
+      border-radius: 10px;
+      color: #fff;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      padding: 15px;
+      box-shadow: 0 0 2px 0 rgba(255, 154, 114, 0.421),
+                      0 0 20px 0 rgb(101, 76, 61),
+                      0 0 0px 0 rgb(151, 94, 3) inset;
+    }
+    .button1 {
+      /* margin-left: -100px; */
+    }
+    .button2 {
+      /* padding-right: 100px; */
+    }
+.boy {
+  position: absolute;
+  top: 380px;
+  left: 50px;
+  }
+.rabbit {
+  position: absolute;
+  left:60%;
+  top: 120px;
+  width: 300px;
+}
+body{ overflow: hidden
+}
+#txt3 {
+  position: absolute;
+  color:#fff;
+  left: 250px;
+margin-left: -0px;
+  top: 230px; 
+}
+.moon_solar_hybrid {
+    position: absolute;
+    margin-top: 50px;
+display: flex;
+ 
+  }
+  .content-section{
+    position: absolute;
+    color: yellow;
+    width: 800px;
+    margin-left: -600px;
+    margin-top: -250px;
+  
+  }
+  .container {
+    padding: 2px;
+    font-family: var(--ff-10);
+    color: #ffe32f;
+    position: absolute;
+  }
+  
+
+  @keyframes solar_hybrid_animate {
+    0% {
+      bottom: -28px;
+      left: 20%;
+    }
+    100% {
+      bottom: 50px;
+      left: 50%;
+    }
+  }
+  .container {
+    font-family: var(--ff-10);
+    color: #ffe32f;
+    position: absolute;
+  }
+  @keyframes transitionIn{
+    from{ opacity: 0;
+    transform: rotateX(-20deg);}
+    to {opacity: 1;
+    transform: rotateX(0);
+    }
+}
+ 
+  @keyframes moon_solar_hybrid_animate {
+    0% {
+      box-shadow: 0 0 20px rgba(241, 123, 12, 0.3);
+    }
+    100% {
+      box-shadow: 5px 5px 20px rgba(241, 123, 12, 0.6);
+    }
+  }
+
+  .upcome{
+    margin-left:880px;
+    margin-top: 170px;
+    
+  }
+  .content-section{
+    margin-left: 30px;
+    margin-top: -470px;
+  }
+
+  .btn-container{
+    margin-left: 640px;
+  display: flex;
+  align-content: end;
+  justify-content: space-evenly;
+  width: 254px;
+  /* height:600px; */
+  }
+
+  .page-container{
+    height:900px;
+  }

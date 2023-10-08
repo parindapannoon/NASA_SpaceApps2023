@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width">
+    <title>Cover page</title>
+   
+    <link rel="stylesheet" href="./styletype2.css">
+</head>
+<body background="../Images/beautiful-shot-blue-purple-sky-filled-with-starts.jpg">
+    
+    <div class="boy"><img src="../Images/boy.png" width="40%" height="60%"></div>
+			<div class="rabbit"><img src="../Images/rabbit.png" width="45%" height="100%">
+            <div id="txt4" > </div>
+    <div class="moon_solar_hybrid">
+        <center><img src="../Images/pngwing.com (2).png" style="width: 450px;"></center>
+        <div class="solar_hybrid"></div>
+   </div>
+    <div class="button1">
+		<button onclick="startAnimation()">Next</button></div>
+		<div class="button2"><a href="./solar_eclipse/solar.html"><button>Back</button></a></div>
+    <div class="page-container">
+        <div class="moon"></div>
+        <div class="behind-moon"></div>
+        <div class="content-section">
+            <h1>Chapter 2
+                <h2><p>What is the difference between solar and lunar eclipse?
+                </p></h2>
+                <h5><p>Second chapter will explain the different between solar and lunar eclipse as well as visualize each types of the eclipses</p></h5>
+            </h1>
+            
+            
+              
+            </div>
+        </div>
+
+        
+        
+    </div>
+    <script>
+    var texts = ["<h6>Peter: What's happening to the moon? <br>The moon seemed to be wearing a mysterious shadow covering her bright face", "<h6><br>Mr.Rabbit: It was a lunar eclipse. <br>a lunar eclipse, it happens when the Earth passes between the sun and the moon. <br>The Earth casts a shadow on the moon, making it look like Luna is taking a little nap",
+        "<h6><br>Peter: But...why does the moon turn red sometimes? It seems like she is wearing a makeup", "<h6><br>Mr.Rabbit: Good question, that's about some sunlight sneaks past our planet's atmosphere to the moon", "<h6><br>Peter: Um...", "<h6><br>Mr.Rabbit: Don't worry, we will explore all about lunar elipses together", "<h6>Follow me!"]
+    var currentIndex = 0;
+        function startAnimation() {if (currentIndex < texts.length) {
+            var output = document.getElementById("txt4");
+            output.innerHTML += "<p>" + texts[currentIndex] + "</p>";
+            currentIndex++;
+        } else {
+            // window.location.replace("./indexscience3.html");
+            window.location.replace("./luna_eclipse/luna.html")
+        }}   
+        </script>
+</body>
+</html>

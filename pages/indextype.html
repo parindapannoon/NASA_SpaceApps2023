@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width">
+    <title>Cover page</title>
+   
+    <link rel="stylesheet" href="./styletype.css">
+</head>
+<body background="../Images/beautiful-shot-blue-purple-sky-filled-with-starts.jpg">
+    <div class="boy"><img src="../Images/boy.png" width="40%" height="60%"></div>
+			<div class="rabbit"><img src="../Images/rabbit.png" width="45%" height="100%">
+            <div id="txt3" > </div>
+    <div class="moon_solar_hybrid">
+        <center><img src="../Images/pngwing.com (1).png" style="width: 450px;"></center>
+        <div class="solar_hybrid"></div>
+   </div>
+    <div class="button1">
+		<button onclick="startAnimation()">Next</button></div>
+		<div class="button2"><a href="./indexintro2.html"><button>Back</button></a></div>
+    <div class="page-container">
+        <div class="moon"></div>
+        <div class="behind-moon"></div>
+        <div class="content-section">
+            <h1>Chapter 2
+                <h2><p>What is the difference between solar and lunar eclipse?
+                </p></h2>
+                <h5><p>Second chapter will explain the different between solar and lunar eclipse as well as visualize each types of the eclipses</p></h5>
+            </h1>
+            
+            
+              
+            </div>
+        </div>
+
+        
+        
+    </div>
+    <script>
+    var texts = ["<h6>Peter: I can imagine that the moon like an umbrella shielding the Sun's rays when the solar elipse occurs", "<h6><br>Mr.Rabbit: You're right Peter, there are different types of solar eclipses. <br>The total eclipse is the most amazing, where the Sun is completely covered by the moon. <br>The sky becomes as dark as night for a few minutes!",
+        "<h6><br>Peter: Can we watch it together, Mr.Rabbit? (eyes twinkling with excitement.)", "<h6><br>Mr.Rabbit: (nodded) Of course, We'll need special glasses to protect our eyes, though.", "<h6>Let's go"]
+    var currentIndex = 0;
+        function startAnimation() {if (currentIndex < texts.length) {
+            var output = document.getElementById("txt3");
+            output.innerHTML += "<p>" + texts[currentIndex] + "</p>";
+            currentIndex++;
+        } else {
+            window.location.replace("./solar_eclipse/solar.html")
+            // window.location.replace("./indextypelunar.html");
+        }}   
+        </script>
+</body>
+</html>
